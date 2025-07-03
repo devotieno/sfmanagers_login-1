@@ -3,7 +3,7 @@ import { FiLock, FiUnlock, FiEye, FiEyeOff } from 'react-icons/fi';
 import Chipimg from '../assets/images/chipimg2.jpg'
 import Footer from './shared/footer';
 
-const LoginCard = () => {
+const LoginCard = ({ onSwitchToSignup }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
@@ -76,8 +76,19 @@ const LoginCard = () => {
                 </div>
               </div>
               <button className="w-full mt-6 bg-blue-600 hover:bg-blue-500 text-white py-2 rounded-lg transition">
-                AUTHENTICATE
+                LOGIN
               </button>
+
+              {/* Switch to Signup */}
+              <div className="text-center mt-4">
+                <span className="text-blue-300">Don't have an account? </span>
+                <button 
+                  onClick={onSwitchToSignup}
+                  className="text-white hover:text-blue-200 underline transition-colors"
+                >
+                  Sign Up Here
+                </button>
+              </div>
             </div>
           </div>
         </div>
